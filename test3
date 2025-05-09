@@ -1,0 +1,21 @@
+import json
+
+
+def analisar_faturamento():
+    with open("faturamento.json", "r") as f:
+        dados = json.load(f)
+
+    valores = [dia["valor"] for dia in dados if dia["valor"] > 0]
+
+    menor = min(valores)
+    maior = max(valores)
+    media = sum(valores) / len(valores)
+    dias_acima_media = sum(1 for v in valores if v > media)
+
+    print("Menor faturamento:", menor)
+    print("Maior faturamento:", maior)
+    print("Dias com faturamento acima da média:", dias_acima_media)
+
+
+if __name__ == "__main__":
+    analisar_faturamento()
