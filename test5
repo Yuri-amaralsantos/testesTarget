@@ -1,0 +1,11 @@
+def inverter_string(s):
+    return s[::-1]
+
+
+def main():
+    texto = input("Digite uma string para inverter: ")
+    print("Invertida:", inverter_string(texto))
+
+
+if __name__ == "__main__":
+    main()
